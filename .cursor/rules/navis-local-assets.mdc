@@ -1,0 +1,21 @@
+---
+description: Navis theme — use local image files instead of Figma MCP asset URLs in HTML/CSS.
+globs: "**/*.{html,css,scss}"
+alwaysApply: true
+---
+
+# Ảnh & asset: ưu tiên file local, không dùng URL Figma MCP
+
+Khi chỉnh `*.html`, `style.css`, hoặc `style.scss` cho project Navis:
+
+1. **Không nhúng** URL dạng `https://www.figma.com/api/mcp/asset/<uuid>` (link tải tạm từ Figma MCP) vào markup hoặc CSS `url(...)` nếu có thể thay bằng file trong repo.
+
+2. **Ưu tiên**: tải ảnh về máy, đặt dưới thư mục **`assets/`** (hoặc **`assets/images/`** nếu cần tách rõ), đặt tên mô tả ngắn (ví dụ `hero-he-sinh-thai.jpg`, `logo-navis-footer.png`).
+
+3. **Trong HTML/CSS**: tham chiếu đường dẫn tương đối từ trang, ví dụ `./assets/...` hoặc `assets/...` thống nhất với các trang hiện có (footer social đang dùng `./assets/*.svg`).
+
+4. **Khi bóc design từ Figma**: vẫn có thể dùng MCP để lấy layout, copy, kích thước; sau đó **lưu asset về local** rồi cập nhật `src` / `url()` trỏ tới file đã tải.
+
+5. **Ngoại lệ**: SVG/icon đã có sẵn trong `assets/`, hoặc ảnh stock cố định từ CDN khác nếu team đồng ý — không bắt buộc gom về Figma MCP.
+
+6. **Bố cục & số đo**: xem thêm `navis-figma-pixel-perfect.mdc` (spacing, type, shadow đúng px theo Figma).

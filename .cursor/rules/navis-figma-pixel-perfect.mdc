@@ -1,0 +1,33 @@
+---
+description: Navis theme — implement UI pixel-perfect vs Figma (spacing, type, layout from Dev Mode).
+globs: "**/*.{html,css,scss}"
+alwaysApply: true
+---
+
+# Chuẩn Figma — pixel-perfect (perfect px)
+
+Khi implement UI từ file Figma cho project Navis:
+
+## Số đo & layout
+
+1. **Ưu tiên đúng số từ Figma Dev Mode**: `width`, `height`, `padding`, `margin`, `gap`, `border-radius`, `max-width` của frame/container — dùng **px** (hoặc `rem` tương đương nếu design system quy định), tránh làm tròn tùy ý khác frame (ví dụ Figma `32px` → không đổi thành `30px` trừ khi responsive cố ý).
+
+2. **Grid / cột**: trùng số cột, `gap`, và `max-width` container (ví dụ `1320px`, `60px` padding ngang nếu frame ghi rõ). Giữ `container.px-navis` đồng bộ với chỉnh lề đã có trong theme.
+
+3. **Breakpoint**: khi Figma có variant mobile/tablet/desktop, map đúng breakpoint (Bootstrap `sm`/`md`/`lg`/`xl`) và giữ spacing Figma cho từng breakpoint, không gộp một giá trị chung nếu file có hai bộ số khác nhau.
+
+## Typography
+
+4. **Font-size, line-height, letter-spacing**: khớp token Figma (ví dụ `14px / 22px`, `0.28px` tracking). Font family trong project dùng **FZ Poppins** (`Bold` / `Medium` / `Regular`) đã khai báo `@font-face` — map tương ứng SemiBold Figma → `Bold` hoặc `Medium` theo độ đậm visual, nhất quán trong cùng một section.
+
+5. **Text transform & color**: `uppercase`, `capitalize`, màu `#101010`, `#595959`, `#021623`, gradient title — lấy đúng hex/gradient từ Figma, không đổi “gần giống”.
+
+## Hiệu ứng & chi tiết
+
+6. **Shadow, border, opacity, blur**: copy giá trị Figma (`box-shadow`, `backdrop-filter`, `rgba(...)` border) thay vì ước lượng.
+
+7. **Ảnh / icon**: kích thước hiển thị đúng khung Figma (ví dụ icon `40×40`, logo header `123×72` nếu frame ghi vậy); asset lưu local theo rule `navis-local-assets.mdc`.
+
+## Kiểm tra
+
+8. Sau khi code, so khớp nhanh: chiều cao section, khoảng cách giữa block, căn trái/phải/giữa theo auto-layout Figma. Nếu lệch vài px do subpixel/font rendering, chỉnh tối thiểu và ghi chú trong PR/commit nếu cần.

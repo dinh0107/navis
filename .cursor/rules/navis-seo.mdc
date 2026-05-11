@@ -1,0 +1,51 @@
+---
+description: Navis theme — SEO-first markup, meta, semantics, and content practices.
+globs: "**/*.html"
+alwaysApply: true
+---
+
+# Ưu tiên chuẩn SEO (Navis)
+
+Khi tạo hoặc sửa trang HTML (`index.html`, `gioi-thieu.html`, `dich-vu-*.html`, `he-sinh-thai-*.html`, v.v.):
+
+## Meta & head
+
+1. **`<title>`**: mỗi trang một tiêu đề **duy nhất**, rõ chủ đề + thương hiệu (ví dụ `Giới thiệu — Navis Global`), ~50–60 ký tự hợp lý, không nhồi từ khóa vô nghĩa.
+
+2. **`<meta name="description">`**: mỗi trang một đoạn **duy nhất**, tóm tắt nội dung chính, ~150–160 ký tự, khuyến khích có từ khóa tự nhiên tiếng Việt.
+
+3. **`html lang="vi"`**: giữ đúng ngôn ngữ nội dung (đổi nếu có bản EN).
+
+4. **`link rel="canonical"`**: trỏ URL chính thức của trang (dùng đường dẫn tuyệt đối khi đã biết domain triển khai, hoặc relative path thống nhất nếu site chỉ static).
+
+5. **Open Graph (khuyến nghị)**: `og:title`, `og:description`, `og:type` (`website`), `og:url`, `og:image` (ảnh đại diện ≥ ~1200px chiều ngang nếu có), `og:locale` (`vi_VN`). Giúp chia sẻ mạng xã hội.
+
+6. **`meta name="robots"`**: mặc định `index, follow` cho trang công khai; chỉ `noindex` khi trang tạm / nháp / thank-you riêng.
+
+## Cấu trúc & semantics
+
+7. **Một `<h1>` duy nhất** mỗi trang, trùng hoặc rất sát chủ đề chính; `<h2>`–`<h6>` theo thứ tự logic section, không nhảy cấp chỉ để styling.
+
+8. **`<main>`**: bọc nội dung chính; landmark `header`, `footer`, `nav` với `aria-label` khi có nhiều `nav`.
+
+9. **Breadcrumb**: nếu có, dùng `<nav aria-label="Breadcrumb">` + `ol`/`li` hoặc liên kết có thứ tự rõ; có thể bổ sung JSON-LD `BreadcrumbList` khi cần rich results.
+
+## Hình ảnh & liên kết
+
+10. **`alt` trên `<img>`**: mô tả ngắn có ý nghĩa; để `alt=""` chỉ khi ảnh thuần trang trí. Logo: `alt="Navis Global"` (hoặc tên chuẩn brand).
+
+11. **Liên kết**: text anchor mô tả đích (`Dịch vụ quản trị OTA`) thay vì “bấm vào đây”; `href` đầy đủ hoặc relative nhất quán.
+
+12. **Ảnh below the fold**: có thể thêm `loading="lazy"` `decoding="async"` (không lazy ảnh LCP/hero đầu trang).
+
+## Structured data (tùy trang)
+
+13. **Trang chủ / liên hệ**: cân nhắc JSON-LD `Organization` (tên, url, logo, `sameAs`, điện thoại, địa chỉ). **Bài viết**: `Article` / `BlogPosting` nếu có template tin.
+
+## Kỹ thuật chung
+
+14. **Không chặn nội dung quan trọng bằng JS** cho SEO on-page; nội dung chính có trong HTML.
+
+15. **Performance gắn với SEO**: tránh DOM quá sâu vô ích; CSS/JS gọn; ưu tiên asset local theo `navis-local-assets.mdc` để ổn định URL và cache.
+
+Khi thêm trang mới, cập nhật **title + description + canonical + og:** trước khi coi là xong.
