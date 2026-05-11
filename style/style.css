@@ -325,6 +325,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 100px;
   padding: 12px 32px;
   border-radius: 48px;
   text-decoration: none;
@@ -1877,7 +1878,7 @@ body {
   color: #fff;
   filter: brightness(1.05);
 }
-.hero-scroll {
+.about-hero .hero-scroll {
   position: absolute;
   right: 24px;
   bottom: 24px;
@@ -1887,12 +1888,12 @@ body {
   align-items: center;
   gap: 8px;
 }
-.hero-scroll span {
+.about-hero .hero-scroll span {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 26px;
 }
-.hero-scroll__btn {
+.about-hero .hero-scroll__btn {
   width: 48px;
   height: 48px;
   border-radius: 70px;
@@ -1907,7 +1908,7 @@ body {
   color: inherit;
   box-sizing: border-box;
 }
-.hero-scroll__btn img {
+.about-hero .hero-scroll__btn img {
   width: 20px;
   height: 20px;
 }
