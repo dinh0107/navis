@@ -2,22 +2,17 @@
 @font-face {
   font-family: "Bold";
   font-display: swap;
-  src: url("../webfonts/FZ Poppins-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Bold";
-  font-display: swap;
-  src: url("../webfonts/FZ Poppins-Bold.woff2") format("woff2");
+  src: url("../webfonts/SVN-Poppins-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Medium";
   font-display: swap;
-  src: url("../webfonts/FZ Poppins-Medium.woff2") format("woff2");
+  src: url("../webfonts/SVN-Poppins-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "Regular";
   font-display: swap;
-  src: url("../webfonts/FZ Poppins-Regular.woff2") format("woff2");
+  src: url("../webfonts/SVN-Poppins-Regular.ttf") format("truetype");
 }
 html {
   scroll-behavior: smooth;
