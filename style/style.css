@@ -205,7 +205,82 @@ body {
   color: #fff;
   text-transform: capitalize;
 }
+.site-header__dropdown {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.site-header__dropdown-icon {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  width: 12px;
+  text-align: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.site-header__dropdown-panel {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 50;
+  padding-top: 10px;
+  min-width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+.site-header__dropdown-surface {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(2, 22, 35, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+.site-header__dropdown-item {
+  font-family: "Medium";
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #0b1d35;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  display: block;
+  white-space: nowrap;
+}
+.site-header__dropdown-item:first-child {
+  color: #6f411e;
+}
+.site-header__dropdown-item:last-child {
+  border-bottom: 0;
+  white-space: normal;
+  max-width: 320px;
+}
+.site-header__dropdown-item:hover {
+  opacity: 1;
+  background: #fafafa;
+}
 
+@media (min-width: 992px) {
+  .site-header__dropdown:hover .site-header__dropdown-panel,
+  .site-header__dropdown:focus-within .site-header__dropdown-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .site-header__dropdown:hover .site-header__dropdown-icon,
+  .site-header__dropdown:focus-within .site-header__dropdown-icon {
+    transform: rotate(180deg);
+  }
+}
 .site-header.site-header--scrolled {
   position: fixed;
   left: 0;
@@ -356,15 +431,15 @@ body {
 }
 
 .hero-scroll {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  z-index: 6 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
   gap: 8px;
-  color: #fff;
+  color: #fff !important;
 }
 .hero-scroll span {
   font-family: "Inter", sans-serif;
