@@ -18,9 +18,14 @@
 <body class="page-home">
   <main id="home" data-node-id="6:467">
     <!-- Hero -->
-    <section class="site-hero hero" aria-label="Hero">
+    <section class="site-hero hero" aria-label="Hero" id="hero-main">
       <div class="hero__bg" aria-hidden="true">
-        <img src="https://www.figma.com/api/mcp/asset/ac9fb74a-c4a3-47ac-ae74-6e59518d52be" alt="" />
+        <div class="hero__bg-layer hero__bg-layer--visible">
+          <img src="./assets/banner.jpg" alt="" decoding="async" fetchpriority="high" />
+        </div>
+        <div class="hero__bg-layer">
+          <img src="./assets/banner.jpg" alt="" decoding="async" />
+        </div>
       </div>
       <div class="hero__shade-vertical" aria-hidden="true"></div>
       <div class="hero__shade-side" aria-hidden="true"></div>
@@ -72,20 +77,27 @@
                   <img src="./assets/search.svg" width="16" height="16" alt="" />
                 </a>
                 <span class="site-header__divider" aria-hidden="true"></span>
-                <a href="#" class="site-header__locale">
-                  <img src="./assets/vn.svg" width="20" height="20" alt="" />
-                  <span>VN</span>
-                </a>
+                <button type="button" class="site-header__locale" role="switch" aria-checked="false"
+                  aria-label="Chuyển sang tiếng Anh bằng Google Dịch">
+                  <span class="site-header__locale-inner">
+                    <span class="site-header__locale-flag-wrap" aria-hidden="true">
+                      <img class="site-header__locale-flag" src="./assets/vn.svg" width="20" height="20" alt="" decoding="async" />
+                    </span>
+                    <span class="site-header__locale-code">VN</span>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      <div class="hero-content container px-navis">
+      <div class="hero-content container px-navis" id="hero-panel" aria-live="polite" aria-atomic="true">
         <div class="hero-content__text">
-          <h1>Navis Global –</h1>
-          <p class="hero-content__sub">Điều hướng tăng trưởng<br />du lịch quốc tế</p>
+          <div class="hero-content__text-inner">
+            <h1 id="hero-panel-title">Navis Global –</h1>
+            <p class="hero-content__sub" id="hero-panel-sub">Điều hướng tăng trưởng<br />du lịch quốc tế</p>
+          </div>
         </div>
         <a class="btn-pill btn-pill--glass-dark" href="doi-tac.html">
           Trở thành đối tác
@@ -97,25 +109,33 @@
         <div class="container px-navis px-lg-0">
           <div class="row row-cols-2 row-cols-lg-4 g-0 hero-categories__row">
             <div class="col p-0">
-              <a href="du-an.html" class="hero-categories__item hero-categories__item--active w-100 h-100">
+              <a href="du-an.html" class="hero-categories__item hero-categories__item--active w-100 h-100"
+                data-hero-idx="0" data-hero-bg="./assets/banner-2.jpg" data-hero-title="Navis Global –"
+                data-hero-sub="Điều hướng tăng trưởng|du lịch quốc tế">
                 <img src="https://www.figma.com/api/mcp/asset/637d3611-3671-429d-9ac3-7113a94e2378" alt="" />
                 <span>du thuyền</span>
               </a>
             </div>
             <div class="col p-0">
-              <a href="he-sinh-thai-navis.html" class="hero-categories__item w-100 h-100">
+              <a href="he-sinh-thai-navis.html" class="hero-categories__item w-100 h-100" data-hero-idx="1"
+                data-hero-bg="./assets/Rectangle 3464231.jpg" data-hero-title="Resort –"
+                data-hero-sub="Hệ sinh thái nghỉ dưỡng|và vận hành bền vững">
                 <img src="https://www.figma.com/api/mcp/asset/d51d85a1-ef99-4c5c-9a6b-f2e5c087fffb" alt="" />
                 <span>Resort</span>
               </a>
             </div>
             <div class="col p-0">
-              <a href="dich-vu-quan-tri-ota.html" class="hero-categories__item w-100 h-100">
+              <a href="dich-vu-quan-tri-ota.html" class="hero-categories__item w-100 h-100" data-hero-idx="2"
+                data-hero-bg="./assets/Rectangle 3464206.jpg" data-hero-title="Khách sạn –"
+                data-hero-sub="Tối ưu OTA &amp; doanh thu|trên thị trường quốc tế">
                 <img src="https://www.figma.com/api/mcp/asset/f7ed679f-bae0-40b6-ba52-01211e24a7bb" alt="" />
                 <span>Khách sạn</span>
               </a>
             </div>
             <div class="col p-0">
-              <a href="gioi-thieu.html" class="hero-categories__item w-100 h-100">
+              <a href="gioi-thieu.html" class="hero-categories__item w-100 h-100" data-hero-idx="3"
+                data-hero-bg="./assets/Rectangle 50.jpg" data-hero-title="Du lịch cao cấp –"
+                data-hero-sub="Thương hiệu &amp; kết nối|khách luxury toàn cầu">
                 <img src="https://www.figma.com/api/mcp/asset/f7ed679f-bae0-40b6-ba52-01211e24a7bb" alt="" />
 
                 <span>Du lịch cao cấp</span>
@@ -134,9 +154,9 @@
     </section>
 
     <!-- About -->
-    <section class="section-about row g-0" id="gioi-thieu">
+    <section class="section-about  row g-0" id="gioi-thieu">
       <div class="section-about__visual col-12 col-lg-6 p-0">
-        <img class="cover img-fluid" src="./assets/gioi-thieu.jpg" alt="" />
+        <img class="cover img-fluid" src="./assets/Rectangle 3464206.jpg" alt="" />
       </div>
       <div class="section-about__copy col-12 col-lg-6 d-flex align-items-center">
         <div class="wrap px-navis w-100">
@@ -206,6 +226,9 @@
               <h3>Quản trị hệ thống OTA</h3>
               <p>Tối ưu hiển thị, giá bán và nội dung trên nền tảng quốc tế<br />Gia tăng chuyển đổi, tối đa hóa doanh
                 thu bền vững</p>
+                <a class="service-card__cta" href="dich-vu-quan-tri-ota.html"
+                  aria-label="Chi tiết dịch vụ Quản trị hệ thống OTA"><img class="decor"
+                    src="./assets/decor.png" alt="" decoding="async" /><span>Chi tiết</span></a>
             </article>
           </div>
           <div class="service-slider__slide">
@@ -215,14 +238,21 @@
               <h3>Marketing du lịch quốc tế</h3>
               <p>Định vị thương hiệu và kích hoạt nhu cầu qua các kênh số và đối tác toàn cầu phù hợp với phân khúc
                 khách.</p>
+              <a class="service-card__cta" href="dich-vu-quan-tri-ota.html"
+                aria-label="Chi tiết dịch vụ Quản trị hệ thống OTA"><img class="decor"
+                  src="./assets/decor.png" alt="" decoding="async" /><span>Chi tiết</span></a>
             </article>
           </div>
           <div class="service-slider__slide">
             <article class="service-card">
               <div class="service-card__icon"><img
                   src="https://www.figma.com/api/mcp/asset/57ff9b2b-0ff8-4367-a7b8-1f2578081d8c" alt="" /></div>
-              <h3>Kết nối Travel Agency</h3>
-              <p>Mở rộng phân phối qua mạng lưới TA/B2B, tối ưu chính sách giá và hiệu suất kênh.</p>
+              <h3>Marketing du lịch quốc tế</h3>
+              <p>Định vị thương hiệu và kích hoạt nhu cầu qua các kênh số và đối tác toàn cầu phù hợp với phân khúc
+                khách.</p>
+              <a class="service-card__cta" href="dich-vu-quan-tri-ota.html"
+                aria-label="Chi tiết dịch vụ Quản trị hệ thống OTA"><img class="decor"
+                  src="./assets/decor.png" alt="" decoding="async" /><span>Chi tiết</span></a>
             </article>
           </div>
           <div class="service-slider__slide">
@@ -231,7 +261,9 @@
                   src="https://www.figma.com/api/mcp/asset/57ff9b2b-0ff8-4367-a7b8-1f2578081d8c" alt="" /></div>
               <h3>Tư vấn &amp; vận hành</h3>
               <p>Đồng hành triển khai quy trình, chuẩn hóa vận hành và đo lường KPI doanh thu theo giai đoạn.</p>
-            </article>
+             <a class="service-card__cta" href="dich-vu-quan-tri-ota.html"
+                aria-label="Chi tiết dịch vụ Quản trị hệ thống OTA"><img class="decor"
+                  src="./assets/decor.png" alt="" decoding="async" /><span>Chi tiết</span></a>            </article>
           </div>
           <div class="service-slider__slide">
             <article class="service-card">
@@ -239,6 +271,9 @@
                   src="https://www.figma.com/api/mcp/asset/57ff9b2b-0ff8-4367-a7b8-1f2578081d8c" alt="" /></div>
               <h3>Tư vấn &amp; vận hành</h3>
               <p>Đồng hành triển khai quy trình, chuẩn hóa vận hành và đo lường KPI doanh thu theo giai đoạn.</p>
+              <a class="service-card__cta" href="dich-vu-quan-tri-ota.html"
+                aria-label="Chi tiết dịch vụ Quản trị hệ thống OTA"><img class="decor"
+                  src="./assets/decor.png" alt="" decoding="async" /><span>Chi tiết</span></a>
             </article>
           </div>
         </div>
@@ -263,6 +298,7 @@
             <div class="section-pillars__col h-100">
               <img src="./assets/Cruise.png" alt="" class="icon-pillars">
               <span>lĩnh vực phục vụ</span>
+              <h3>Khách sạn cao cấp</h3>
               <p>Tối ưu hiển thị, giá bán và nội dung trên nền tảng quốc tế Gia tăng chuyển đổi, tối đa hóa doanh thu
                 bền vững</p>
             </div>
@@ -301,7 +337,7 @@
     <!-- Why us -->
     <section class="section-why row g-0" id="why">
       <div class="section-why__photo col-12 col-lg-6 p-0">
-        <img class="cover img-fluid" src="./assets/gioi-thieu.jpg" alt="" />
+        <img class="cover img-fluid" src="./assets/w4-main 1.jpg" alt="" />
       </div>
       <div class="section-why__panel col-12 col-lg-6">
         <div class="inner px-navis">
@@ -346,7 +382,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -360,7 +396,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -374,7 +410,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -388,7 +424,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -402,7 +438,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -416,7 +452,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -430,7 +466,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -444,7 +480,7 @@
           <div class="col-lg-3">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="./assets/gioi-thieu.jpg" alt="">
+                <img src="/assets/people.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="team-card__info">
@@ -656,21 +692,19 @@
     <section class="section-prefooter" data-node-id="201:1665" aria-labelledby="prefooter-heading">
       <div class="section-prefooter__ribbon" aria-hidden="true">
         <img class="section-prefooter__ribbon-img"
-          src="https://www.figma.com/api/mcp/asset/bb2ff3e6-21b4-4e00-8868-24a55fd9d7c7" alt="" />
+          src="/assets/Rectangle 50.jpg" alt="" />
       </div>
       <div class="section-prefooter__main">
         <div class="row g-0">
           <div class="col-12 col-lg-6 section-prefooter__content">
             <div class="section-prefooter__panel-bg" aria-hidden="true">
               <span class="section-prefooter__panel-solid"></span>
-              <img class="section-prefooter__texture"
-                src="https://www.figma.com/api/mcp/asset/273cf8f2-fac5-49ac-b3ae-8bcd9dc398e9" alt="" />
+             <i class="fa-solid fa-check"></i>
             </div>
             <div class="section-prefooter__inner">
               <a class="section-prefooter__pill" href="lien-he.html">
                 <span>liên hệ</span>
-                <img src="https://www.figma.com/api/mcp/asset/57bd335c-364d-43cc-9425-83547b9ff52c" width="12"
-                  height="12" alt="" />
+               <i class="fa-solid fa-check"></i>
               </a>
               <h2 class="section-prefooter__title" id="prefooter-heading">
                 <span>Cùng Navis mở rộng</span>
@@ -679,22 +713,19 @@
               <ul class="section-prefooter__list">
                 <li>
                   <span class="section-prefooter__check" aria-hidden="true">
-                    <img src="https://www.figma.com/api/mcp/asset/e3fc16b1-9297-49a2-948b-88bd20383b89" width="11"
-                      height="11" alt="" />
+                  <i class="fa-solid fa-check"></i>
                   </span>
                   <span>Tăng nhận diện và tối đa doanh thu trên nền tảng trực tuyến.</span>
                 </li>
                 <li>
                   <span class="section-prefooter__check" aria-hidden="true">
-                    <img src="https://www.figma.com/api/mcp/asset/e3fc16b1-9297-49a2-948b-88bd20383b89" width="11"
-                      height="11" alt="" />
+                    <i class="fa-solid fa-check"></i>
                   </span>
                   <span>Nâng tầm vận hành với hệ thống công nghệ đồng bộ.</span>
                 </li>
                 <li>
                   <span class="section-prefooter__check" aria-hidden="true">
-                    <img src="https://www.figma.com/api/mcp/asset/e3fc16b1-9297-49a2-948b-88bd20383b89" width="11"
-                      height="11" alt="" />
+                   <i class="fa-solid fa-check"></i>
                   </span>
                   <span>Tiếp cận mạng lưới khách hàng từ TA/B2B toàn cầu. Hạn chế lãng phí nguồn lực tài chính và tiết
                     kiệm thời gian, giảm rủi ro từ định hướng phát triển ban đầu cho doanh nghiệp của bạn.</span>
@@ -702,13 +733,12 @@
               </ul>
               <a class="section-prefooter__cta" href="lien-he.html">
                 <span>Liên hệ tư vấn</span>
-                <img src="https://www.figma.com/api/mcp/asset/57bd335c-364d-43cc-9425-83547b9ff52c" width="12"
-                  height="12" alt="" />
+                <i class="fa-sharp fa-thin fa-arrow-right"></i>
               </a>
             </div>
           </div>
           <div class="col-12 col-lg-6 section-prefooter__visual">
-            <img src="https://www.figma.com/api/mcp/asset/0b26a95b-531c-4e35-ae02-c356e2358430"
+            <img src="/assets/Rectangle 3464231.jpg"
               alt="Hình ảnh minh họa đội tàu và vận hành du lịch biển" />
           </div>
         </div>

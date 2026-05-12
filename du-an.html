@@ -70,10 +70,15 @@
                   <img src="./assets/search.svg" width="16" height="16" alt="" />
                 </a>
                 <span class="site-header__divider" aria-hidden="true"></span>
-                <a href="#" class="site-header__locale">
-                  <img src="./assets/vn.svg" width="20" height="20" alt="" />
-                  <span>VN</span>
-                </a>
+                <button type="button" class="site-header__locale" role="switch" aria-checked="false"
+                  aria-label="Chuyển sang tiếng Anh bằng Google Dịch">
+                  <span class="site-header__locale-inner">
+                    <span class="site-header__locale-flag-wrap" aria-hidden="true">
+                      <img class="site-header__locale-flag" src="./assets/vn.svg" width="20" height="20" alt="" decoding="async" />
+                    </span>
+                    <span class="site-header__locale-code">VN</span>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
