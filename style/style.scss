@@ -144,11 +144,12 @@ $tag-cream: #fff4da;
 
 .hero {
     position: relative;
-    min-height: 688px;
+    height: 100vh;
     color: #fff;
     overflow: hidden;
 
-    &::before {
+    &::before,
+    &::after {
         content: "";
         position: absolute;
         top: 0;
@@ -156,8 +157,14 @@ $tag-cream: #fff4da;
         width: 100%;
         height: 100%;
         z-index: 2;
+    }
+
+    &::before {
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.30) 9.59%, rgba(0, 0, 0, 0.00) 28.72%, rgba(14, 14, 13, 0.00) 71.75%, #0E0E0D 100%);
-        mix-blend-mode: multiply;
+    }
+
+    &::after {
+        background:linear-gradient(273deg, rgba(0, 0, 0, 0) 54.55%, rgba(0, 0, 0, 0.6) 97.88%);
     }
 
     &__bg {
@@ -445,7 +452,7 @@ $tag-cream: #fff4da;
         display: block;
         white-space: nowrap;
 
-      
+
 
         &:last-child {
             border-bottom: 0;
@@ -707,7 +714,7 @@ iframe.skiptranslate {
 }
 
 .hero-scroll {
-    position: fixed !important;
+    position: absolute !important;
     right: 24px !important;
     bottom: 24px !important;
     z-index: 6 !important;

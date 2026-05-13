@@ -80,11 +80,11 @@ body {
 
 .hero {
   position: relative;
-  min-height: 688px;
+  height: 100vh;
   color: #fff;
   overflow: hidden;
 }
-.hero::before {
+.hero::before, .hero::after {
   content: "";
   position: absolute;
   top: 0;
@@ -92,8 +92,12 @@ body {
   width: 100%;
   height: 100%;
   z-index: 2;
+}
+.hero::before {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 9.59%, rgba(0, 0, 0, 0) 28.72%, rgba(14, 14, 13, 0) 71.75%, #0E0E0D 100%);
-  mix-blend-mode: multiply;
+}
+.hero::after {
+  background: linear-gradient(273deg, rgba(0, 0, 0, 0) 54.55%, rgba(0, 0, 0, 0.6) 97.88%);
 }
 .hero__bg {
   position: absolute;
@@ -574,7 +578,7 @@ iframe.skiptranslate {
 }
 
 .hero-scroll {
-  position: fixed !important;
+  position: absolute !important;
   right: 24px !important;
   bottom: 24px !important;
   z-index: 6 !important;
