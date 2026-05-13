@@ -84,6 +84,17 @@ body {
   color: #fff;
   overflow: hidden;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 9.59%, rgba(0, 0, 0, 0) 28.72%, rgba(14, 14, 13, 0) 71.75%, #0E0E0D 100%);
+  mix-blend-mode: multiply;
+}
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -103,7 +114,6 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transform: scale(1.02);
   transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .hero__bg-layer--visible {
