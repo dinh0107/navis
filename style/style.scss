@@ -445,9 +445,7 @@ $tag-cream: #fff4da;
         display: block;
         white-space: nowrap;
 
-        &:first-child {
-            color: #6f411e;
-        }
+      
 
         &:last-child {
             border-bottom: 0;
@@ -458,6 +456,7 @@ $tag-cream: #fff4da;
         &:hover {
             opacity: 1;
             background: #fafafa;
+            color: #6f411e;
         }
     }
 }

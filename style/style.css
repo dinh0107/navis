@@ -349,9 +349,6 @@ body {
   display: block;
   white-space: nowrap;
 }
-.site-header__dropdown-item:first-child {
-  color: #6f411e;
-}
 .site-header__dropdown-item:last-child {
   border-bottom: 0;
   white-space: normal;
@@ -360,6 +357,7 @@ body {
 .site-header__dropdown-item:hover {
   opacity: 1;
   background: #fafafa;
+  color: #6f411e;
 }
 
 @media (min-width: 992px) {
