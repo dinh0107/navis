@@ -295,6 +295,40 @@
     });
   }
 
+  function initNewsDetailRelatedSlider() {
+    var $section = $('.news-detail-related');
+    if (!$section.length) {
+      return;
+    }
+
+    var $el = $('#news-detail-related-slider');
+    if (!$el.length || typeof $.fn.slick !== 'function' || $el.hasClass('slick-initialized')) {
+      return;
+    }
+
+    $el.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: false,
+      arrows: false,
+      speed: 400,
+      cssEase: 'ease-out',
+      adaptiveHeight: true,
+      responsive: [
+        { breakpoint: 992, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+        { breakpoint: 576, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+      ]
+    });
+
+    $section.find('.news-detail-related__arrow--prev').on('click', function () {
+      $el.slick('slickPrev');
+    });
+    $section.find('.news-detail-related__arrow--next').on('click', function () {
+      $el.slick('slickNext');
+    });
+  }
+
   function initNewsPage() {
     var $root = $('.page-news');
     if (!$root.length) {
@@ -346,9 +380,35 @@
     var storageKey = 'navisHeroCategoryIdx';
     var hasLayers = $bgLayers.length >= 2;
     var textSwapTimer;
+    var autoRotateTimer;
+    var AUTO_ROTATE_MS = 5000;
 
     if (!$items.length || !$title.length || !$sub.length || !$textInner.length) {
       return;
+    }
+
+    function stopAutoRotate() {
+      if (autoRotateTimer) {
+        window.clearInterval(autoRotateTimer);
+        autoRotateTimer = null;
+      }
+    }
+
+    function startAutoRotate() {
+      if ($items.length < 2) {
+        return;
+      }
+      stopAutoRotate();
+      autoRotateTimer = window.setInterval(function () {
+        var $active = $items.filter('.hero-categories__item--active').first();
+        var current = $active.length ? $items.index($active) : 0;
+        var next = (current + 1) % $items.length;
+        activateItem($items.eq(next));
+      }, AUTO_ROTATE_MS);
+    }
+
+    function resetAutoRotate() {
+      startAutoRotate();
     }
 
     function subHtmlFromData(raw) {
@@ -500,6 +560,7 @@
       }
       e.preventDefault();
       activateItem($(this));
+      resetAutoRotate();
     });
 
     $items.on('keydown', function (e) {
@@ -511,7 +572,123 @@
       }
       e.preventDefault();
       activateItem($(this));
+      resetAutoRotate();
     });
+
+    startAutoRotate();
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stopAutoRotate();
+      } else {
+        startAutoRotate();
+      }
+    });
+  }
+
+  function initServiceStatsCounter() {
+    var $section = $('.service-stats');
+    if (!$section.length) {
+      return;
+    }
+
+    var $counters = $section.find('[data-count-to]');
+    if (!$counters.length) {
+      return;
+    }
+
+    var animated = false;
+
+    function easeOutQuart(t) {
+      return 1 - Math.pow(1 - t, 4);
+    }
+
+    function animateCounter(el, duration) {
+      var $el = $(el);
+      var target = parseFloat($el.attr('data-count-to'), 10);
+      if (isNaN(target)) {
+        return;
+      }
+
+      var suffix = $el.attr('data-suffix') || '';
+      var prefix = $el.attr('data-prefix') || '';
+      var decimals = parseInt($el.attr('data-decimals'), 10);
+      if (isNaN(decimals)) {
+        decimals = 0;
+      }
+
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) {
+          startTime = timestamp;
+        }
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var value = target * easeOutQuart(progress);
+        $el.text(prefix + value.toFixed(decimals) + suffix);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          $el.text(prefix + target.toFixed(decimals) + suffix);
+        }
+      }
+
+      window.requestAnimationFrame(step);
+    }
+
+    function runCounters() {
+      if (animated) {
+        return;
+      }
+      animated = true;
+      $counters.each(function (_, el) {
+        animateCounter(el, 2000);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              runCounters();
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.35 }
+      );
+      observer.observe($section[0]);
+    } else {
+      runCounters();
+    }
+  }
+
+  function initHeroScrollHide() {
+    var $scrolls = $('.hero-scroll');
+    if (!$scrolls.length) {
+      return;
+    }
+
+    var ticking = false;
+    var threshold = 200;
+
+    function updateHeroScroll() {
+      ticking = false;
+      var hidden = window.scrollY >= threshold;
+      $scrolls.toggleClass('hero-scroll--hidden', hidden);
+    }
+
+    function onScroll() {
+      if (ticking) {
+        return;
+      }
+      ticking = true;
+      window.requestAnimationFrame(updateHeroScroll);
+    }
+
+    $(window).on('scroll resize orientationchange', onScroll);
+    updateHeroScroll();
   }
 
   function initHeroStickyHeader() {
@@ -532,7 +709,7 @@
         }
 
         var triggerY = Math.max(0, $hero.offset().top + $hero.outerHeight() - $header.outerHeight());
-        var shouldStick = window.scrollY >= triggerY;
+        var shouldStick = window.scrollY >= 100;
         $header.toggleClass('site-header--scrolled', shouldStick);
       });
     }
@@ -574,7 +751,10 @@
     initAboutDiffSlider();
     initProjectsCasesSlider();
     initProjectDetailRelatedSlider();
+    initNewsDetailRelatedSlider();
     initNewsPage();
+    initServiceStatsCounter();
+    initHeroScrollHide();
     initHeroStickyHeader();
   });
 
