@@ -14,6 +14,11 @@
   font-display: swap;
   src: url("../webfonts/SVN-Poppins-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "SemiBold";
+  font-display: swap;
+  src: url("../webfonts/SVN-Poppins-SemiBold.ttf") format("truetype");
+}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
@@ -113,9 +118,6 @@ body {
     transition: none;
   }
   .hero__bg-layer img {
-    transition: none;
-  }
-  .hero-content__text-inner {
     transition: none;
   }
 }
@@ -505,6 +507,11 @@ iframe.skiptranslate {
   opacity: 0;
   transform: translateY(14px);
 }
+@media (prefers-reduced-motion: reduce) {
+  .hero-content__text-inner {
+    transition: none;
+  }
+}
 .hero-content__text h1 {
   margin: 0;
   font-family: "Bold";
@@ -514,7 +521,7 @@ iframe.skiptranslate {
 }
 .hero-content__text .hero-content__sub {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 40px;
   line-height: 48px;
 }
@@ -651,7 +658,7 @@ iframe.skiptranslate {
 
 .section-title {
   margin: 16px 0 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 40px;
   line-height: 48px;
   color: #021623;
@@ -1108,7 +1115,7 @@ iframe.skiptranslate {
 .section-team h2 {
   margin: 0 auto 48px;
   text-align: center;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 40px;
   line-height: 48px;
   color: #021623;
@@ -1185,7 +1192,7 @@ iframe.skiptranslate {
 .section-partners h2 {
   margin: 0 auto 40px;
   text-align: center;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 40px;
   line-height: 48px;
   color: #021623;
@@ -1259,7 +1266,7 @@ iframe.skiptranslate {
 }
 .section-blog__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 3.2vw, 40px);
   line-height: 48px;
   color: #021623;
@@ -1572,7 +1579,7 @@ iframe.skiptranslate {
   display: flex;
   flex-direction: column;
   gap: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   color: #021623;
@@ -2142,7 +2149,7 @@ iframe.skiptranslate {
 }
 .about-intro__title {
   margin: 16px 0 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 3.2vw, 40px);
   line-height: 1.2;
   color: #021623;
@@ -2180,7 +2187,7 @@ iframe.skiptranslate {
 }
 .about-brand__title-line {
   display: block;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(26px, 3vw, 40px);
   line-height: 1.2;
   background: linear-gradient(90deg, #70411e 0%, #eedc9f 100%);
@@ -2280,7 +2287,7 @@ iframe.skiptranslate {
 }
 .about-diff__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 3.2vw, 40px);
   line-height: 1.2;
   color: #021623;
@@ -2410,7 +2417,7 @@ iframe.skiptranslate {
 }
 .about-people__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 3.2vw, 40px);
   line-height: 1.2;
   color: #021623;
@@ -2473,7 +2480,7 @@ iframe.skiptranslate {
 }
 .about-vision__title {
   margin: 0 0 16px;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 3.2vw, 40px);
   line-height: 1.2;
   color: #021623;
@@ -2563,7 +2570,7 @@ iframe.skiptranslate {
 }
 .about-cta__title {
   margin: 0 0 16px;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(26px, 3vw, 40px);
   line-height: 1.2;
   color: #fff;
@@ -2853,7 +2860,7 @@ iframe.skiptranslate {
 }
 .service-intro__title {
   margin: 0 0 24px;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   color: #021623;
@@ -2923,7 +2930,7 @@ iframe.skiptranslate {
 }
 .service-solutions__title {
   margin: 0 0 40px;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   text-transform: capitalize;
@@ -3028,7 +3035,7 @@ iframe.skiptranslate {
 }
 .service-partners__title {
   margin: 0 0 40px;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   color: #021623;
@@ -3078,7 +3085,7 @@ iframe.skiptranslate {
 }
 .service-cta-panel__title {
   margin: 0 0 16px;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(24px, 3vw, 32px);
   line-height: 40px;
   color: #101010;
@@ -3262,7 +3269,7 @@ iframe.skiptranslate {
 }
 .eco-intro__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   text-transform: capitalize;
@@ -3408,7 +3415,7 @@ iframe.skiptranslate {
 }
 .projects-cases__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   text-transform: capitalize;
@@ -3637,7 +3644,7 @@ iframe.skiptranslate {
 }
 .project-card__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 20px;
   line-height: 28px;
   color: #fff;
@@ -3903,7 +3910,7 @@ iframe.skiptranslate {
 }
 .news-detail-sidebar__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 24px;
   line-height: 32px;
   text-transform: capitalize;
@@ -3980,7 +3987,7 @@ iframe.skiptranslate {
 }
 .news-detail-mini__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 18px;
   line-height: 26px;
   color: #121212;
@@ -4005,7 +4012,7 @@ iframe.skiptranslate {
 }
 .news-detail-related__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   text-transform: capitalize;
@@ -4119,7 +4126,7 @@ iframe.skiptranslate {
 }
 .news-detail-card__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: 18px;
   line-height: 26px;
 }
@@ -4185,7 +4192,7 @@ iframe.skiptranslate {
 }
 .contact-hero .contact-hero__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(36px, 4vw, 48px);
   line-height: 56px;
   text-transform: uppercase;
@@ -4447,7 +4454,7 @@ iframe.skiptranslate {
 }
 .partners-hero .partners-hero__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(36px, 4vw, 48px);
   line-height: 56px;
   text-transform: uppercase;
@@ -4462,7 +4469,7 @@ iframe.skiptranslate {
 .partners-content__title {
   margin: 0;
   text-align: center;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(34px, 3.2vw, 48px);
   line-height: 1.2;
   color: #021623;
@@ -4706,7 +4713,7 @@ iframe.skiptranslate {
 }
 .project-detail-related__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   font-size: clamp(28px, 4vw, 40px);
   line-height: 48px;
   text-transform: capitalize;
@@ -4936,7 +4943,7 @@ iframe.skiptranslate {
 }
 .news-card__title {
   margin: 0;
-  font-family: "Bold";
+  font-family: "SemiBold";
   color: #121212;
 }
 .news-card__title--lead {

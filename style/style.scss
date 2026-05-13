@@ -27,9 +27,21 @@ $gradient-blue: linear-gradient(104deg, #FFF 7.25%, #DBF4FF 56.81%, #DBF4FF 98.4
     src: url('../webfonts/SVN-Poppins-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'SemiBold';
+    font-display: swap;
+    src: url('../webfonts/SVN-Poppins-SemiBold.ttf') format('truetype');
+}
+
 @mixin Bold {
     font-family: 'Bold';
 }
+
+
+@mixin SemiBold {
+    font-family: 'SemiBold';
+}
+
 
 @mixin Regular {
     font-family: 'Regular';
@@ -632,7 +644,7 @@ iframe.skiptranslate {
 
         .hero-content__sub {
             margin: 0;
-            @include Bold();
+            @include SemiBold();
             font-size: 40px;
             line-height: 48px;
         }
@@ -784,7 +796,7 @@ iframe.skiptranslate {
 
 .section-title {
     margin: 16px 0 0;
-    @include Bold();
+    @include SemiBold();
     font-size: 40px;
     line-height: 48px;
     color: $navy-deep;
@@ -1304,7 +1316,7 @@ iframe.skiptranslate {
     h2 {
         margin: 0 auto 48px;
         text-align: center;
-        @include Bold();
+        @include SemiBold();
         font-size: 40px;
         line-height: 48px;
         color: $navy-deep;
@@ -1384,7 +1396,7 @@ iframe.skiptranslate {
     h2 {
         margin: 0 auto 40px;
         text-align: center;
-        @include Bold();
+        @include SemiBold();
         font-size: 40px;
         line-height: 48px;
         color: $navy-deep;
@@ -1465,7 +1477,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 3.2vw, 40px);
         line-height: 48px;
         color: $navy-deep;
@@ -1813,7 +1825,7 @@ iframe.skiptranslate {
         display: flex;
         flex-direction: column;
         gap: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         color: $navy-deep;
@@ -2453,7 +2465,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 16px 0 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 3.2vw, 40px);
         line-height: 1.2;
         color: $navy-deep;
@@ -2498,7 +2510,7 @@ iframe.skiptranslate {
 
     &__title-line {
         display: block;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(26px, 3vw, 40px);
         line-height: 1.2;
         background: linear-gradient(90deg, $primary-dark 0%, $gold-light 100%);
@@ -2613,7 +2625,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 3.2vw, 40px);
         line-height: 1.2;
         color: $navy-deep;
@@ -2759,7 +2771,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 3.2vw, 40px);
         line-height: 1.2;
         color: $navy-deep;
@@ -2831,7 +2843,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0 0 16px;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 3.2vw, 40px);
         line-height: 1.2;
         color: $navy-deep;
@@ -2935,7 +2947,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0 0 16px;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(26px, 3vw, 40px);
         line-height: 1.2;
         color: #fff;
@@ -3258,7 +3270,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0 0 24px;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         color: $navy-deep;
@@ -3334,7 +3346,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0 0 40px;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         text-transform: capitalize;
@@ -3453,7 +3465,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0 0 40px;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         color: $navy-deep;
@@ -3508,7 +3520,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0 0 16px;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(24px, 3vw, 32px);
         line-height: 40px;
         color: $body-text;
@@ -3690,7 +3702,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         text-transform: capitalize;
@@ -3850,7 +3862,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         text-transform: capitalize;
@@ -4113,7 +4125,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: 20px;
         line-height: 28px;
         color: #fff;
@@ -4414,7 +4426,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: 24px;
         line-height: 32px;
         text-transform: capitalize;
@@ -4499,7 +4511,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: 18px;
         line-height: 26px;
         color: #121212;
@@ -4526,7 +4538,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         text-transform: capitalize;
@@ -4652,7 +4664,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: 18px;
         line-height: 26px;
 
@@ -4730,7 +4742,7 @@ iframe.skiptranslate {
 
     .contact-hero__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(36px, 4vw, 48px);
         line-height: 56px;
         text-transform: uppercase;
@@ -5033,7 +5045,7 @@ iframe.skiptranslate {
 
     .partners-hero__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(36px, 4vw, 48px);
         line-height: 56px;
         text-transform: uppercase;
@@ -5049,7 +5061,7 @@ iframe.skiptranslate {
     &__title {
         margin: 0;
         text-align: center;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(34px, 3.2vw, 48px);
         line-height: 1.2;
         color: $navy-deep;
@@ -5340,7 +5352,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         font-size: clamp(28px, 4vw, 40px);
         line-height: 48px;
         text-transform: capitalize;
@@ -5601,7 +5613,7 @@ iframe.skiptranslate {
 
     &__title {
         margin: 0;
-        @include Bold();
+        @include SemiBold();
         color: #121212;
 
         &--lead {
