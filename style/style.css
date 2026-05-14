@@ -1586,7 +1586,7 @@ iframe.skiptranslate {
 .section-prefooter__panel-solid {
   position: absolute;
   inset: 0;
-  background: #fff;
+  background: url(../assets/Contact-bg-1920.png) center/cover no-repeat;
 }
 .section-prefooter__texture {
   position: absolute;
@@ -1745,8 +1745,10 @@ iframe.skiptranslate {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.07;
-  background: radial-gradient(ellipse 120% 70% at 50% -10%, rgba(255, 255, 255, 0.22), transparent 55%), radial-gradient(ellipse 90% 50% at 90% 100%, rgba(112, 65, 30, 0.4), transparent 50%);
+  opacity: 0.2;
+  background: #021623 url(../assets/Footer-bg-1920.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .site-footer__container {
   position: relative;
