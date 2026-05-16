@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -23,7 +23,17 @@
 
       <header class="site-header">
         <div class="container px-navis">
-          <div class="row align-items-center py-2 gx-lg-4 gy-3 text-center text-lg-start">
+          <div class="site-header__mobile-bar d-lg-none py-2">
+            <a href="tin-tuc.html" class="site-header__search site-header__search--mobile-bar" aria-label="Tìm kiếm">
+              <img src="./assets/search.svg" width="18" height="18" alt="" decoding="async" />
+            </a>
+            <a class="site-header__logo site-header__logo--mobile-bar" href="index.html" aria-label="Navis Global"></a>
+            <button type="button" class="site-header__menu-toggle" aria-expanded="false" aria-controls="site-nav-drawer"
+              aria-label="Mở menu điều hướng">
+              <span class="site-header__menu-toggle-bars" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="row site-header__desktop-row align-items-center py-2 gx-lg-4 gy-3 text-center text-lg-start d-none d-lg-flex">
             <div class="col-12 col-lg-4 order-lg-1">
               <nav class="site-header__nav justify-content-center justify-content-lg-start"
                 aria-label="Menu chính trái">
@@ -81,6 +91,47 @@
             </div>
           </div>
         </div>
+        <div class="site-header__drawer-backdrop" aria-hidden="true"></div>
+        <aside id="site-nav-drawer" class="site-header__drawer" role="dialog" aria-modal="true" aria-label="Menu chính"
+          aria-hidden="true">
+          <div class="site-header__drawer-inner">
+            <div class="site-header__drawer-head">
+              <span class="site-header__drawer-title">Menu</span>
+              <button type="button" class="site-header__drawer-close" aria-label="Đóng menu">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <nav class="site-header__drawer-nav" aria-label="Điều hướng chính">
+              <a class="site-header__drawer-link" href="gioi-thieu.html">Giới thiệu</a>
+              <details class="site-header__drawer-details">
+                <summary class="site-header__drawer-summary">Dịch vụ</summary>
+                <div class="site-header__drawer-sub">
+                  <a href="dich-vu-quan-tri-ota.html">Quản trị hệ thống OTA</a>
+                  <a href="dich-vu-2.html">Mạng lưới đại lý du lịch quốc tế</a>
+                  <a href="lien-he.html">Marketing du lịch quốc tế</a>
+                  <a href="lien-he.html">Tư vấn dự án du thuyền, du lịch</a>
+                  <a href="lien-he.html">Tư vấn, Setup vận hành du thuyền, khách sạn, resort</a>
+                </div>
+              </details>
+              <a class="site-header__drawer-link" href="he-sinh-thai-navis.html">Hệ sinh thái Navis</a>
+              <a class="site-header__drawer-link" href="du-an.html">Dự án</a>
+              <a class="site-header__drawer-link" href="doi-tac.html">Đối tác</a>
+              <a class="site-header__drawer-link" href="tin-tuc.html">Tin tức</a>
+              <a class="site-header__drawer-link" href="lien-he.html">Liên hệ</a>
+            </nav>
+            <div class="site-header__drawer-footer">
+              <button type="button" class="site-header__locale site-header__locale--drawer" role="switch" aria-checked="false"
+                aria-label="Chuyển sang tiếng Anh bằng Google Dịch">
+                <span class="site-header__locale-inner">
+                  <span class="site-header__locale-flag-wrap" aria-hidden="true">
+                    <img class="site-header__locale-flag" src="./assets/vn.svg" width="20" height="20" alt="" decoding="async" />
+                  </span>
+                  <span class="site-header__locale-code">VN</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </aside>
       </header>
 
       <nav class="about-hero__breadcrumb container px-navis" aria-label="Breadcrumb">
@@ -405,9 +456,7 @@
             <li class="news-pagination__item" aria-hidden="true">
               <span class="news-pagination__ellipsis">…</span>
             </li>
-            <li class="news-pagination__item">
-              <a class="news-pagination__page" href="tin-tuc.html">8</a>
-            </li>
+
             <li class="news-pagination__item">
               <a class="news-pagination__page" href="tin-tuc.html">9</a>
             </li>

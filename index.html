@@ -29,8 +29,18 @@
 
       <header class="site-header">
         <div class="container px-navis">
-          <div class="row align-items-center py-2 gx-lg-4 gy-3 text-center text-lg-start">
-            <div class="col-12 col-lg-4 order-lg-1">
+          <div class="site-header__mobile-bar d-lg-none py-2">
+            <a href="tin-tuc.html" class="site-header__search site-header__search--mobile-bar" aria-label="Tìm kiếm">
+              <img src="./assets/search.svg" width="18" height="18" alt="" decoding="async" />
+            </a>
+            <a class="site-header__logo site-header__logo--mobile-bar" href="index.html" aria-label="Navis Global"></a>
+            <button type="button" class="site-header__menu-toggle" aria-expanded="false" aria-controls="site-nav-drawer"
+              aria-label="Mở menu điều hướng">
+              <span class="site-header__menu-toggle-bars" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="row site-header__desktop-row align-items-center py-2 gx-lg-4 gy-3 text-center text-lg-start d-none d-lg-flex">
+            <div class="col-12 col-lg-5 order-lg-1">
               <nav class="site-header__nav justify-content-center justify-content-lg-start"
                 aria-label="Menu chính trái">
                 <a class="site-header__link" href="gioi-thieu.html">giới thiệu</a>
@@ -58,13 +68,13 @@
                 <a class="site-header__link" href="du-an.html">Dự án</a>
               </nav>
             </div>
-            <div class="col-12 col-lg-4 order-first order-lg-2 text-lg-center">
+            <div class="col-12 col-lg-2 order-first order-lg-2 text-lg-center">
               <a class="site-header__logo d-inline-flex mx-lg-auto" href="index.html" aria-label="Navis Global">
                 <img src="https://www.figma.com/api/mcp/asset/2ec96501-f40e-4f72-89ad-e5700f30ba80"
                   alt="Navis Global" />
               </a>
             </div>
-            <div class="col-12 col-lg-4 order-lg-3">
+            <div class="col-12 col-lg-5 order-lg-3">
               <div class="site-header__tools justify-content-center justify-content-lg-end">
                 <nav class="site-header__nav" aria-label="Menu chính phải">
                   <a class="site-header__link" href="doi-tac.html">Đối tác</a>
@@ -89,6 +99,47 @@
             </div>
           </div>
         </div>
+        <div class="site-header__drawer-backdrop" aria-hidden="true"></div>
+        <aside id="site-nav-drawer" class="site-header__drawer" role="dialog" aria-modal="true" aria-label="Menu chính"
+          aria-hidden="true">
+          <div class="site-header__drawer-inner">
+            <div class="site-header__drawer-head">
+              <span class="site-header__drawer-title">Menu</span>
+              <button type="button" class="site-header__drawer-close" aria-label="Đóng menu">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <nav class="site-header__drawer-nav" aria-label="Điều hướng chính">
+              <a class="site-header__drawer-link" href="gioi-thieu.html">Giới thiệu</a>
+              <details class="site-header__drawer-details">
+                <summary class="site-header__drawer-summary">Dịch vụ</summary>
+                <div class="site-header__drawer-sub">
+                  <a href="dich-vu-quan-tri-ota.html">Quản trị hệ thống OTA</a>
+                  <a href="dich-vu-2.html">Mạng lưới đại lý du lịch quốc tế</a>
+                  <a href="lien-he.html">Marketing du lịch quốc tế</a>
+                  <a href="lien-he.html">Tư vấn dự án du thuyền, du lịch</a>
+                  <a href="lien-he.html">Tư vấn, Setup vận hành du thuyền, khách sạn, resort</a>
+                </div>
+              </details>
+              <a class="site-header__drawer-link" href="he-sinh-thai-navis.html">Hệ sinh thái Navis</a>
+              <a class="site-header__drawer-link" href="du-an.html">Dự án</a>
+              <a class="site-header__drawer-link" href="doi-tac.html">Đối tác</a>
+              <a class="site-header__drawer-link" href="tin-tuc.html">Tin tức</a>
+              <a class="site-header__drawer-link" href="lien-he.html">Liên hệ</a>
+            </nav>
+            <div class="site-header__drawer-footer">
+              <button type="button" class="site-header__locale site-header__locale--drawer" role="switch" aria-checked="false"
+                aria-label="Chuyển sang tiếng Anh bằng Google Dịch">
+                <span class="site-header__locale-inner">
+                  <span class="site-header__locale-flag-wrap" aria-hidden="true">
+                    <img class="site-header__locale-flag" src="./assets/vn.svg" width="20" height="20" alt="" decoding="async" />
+                  </span>
+                  <span class="site-header__locale-code">VN</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </aside>
       </header>
 
       <div class="hero-content container px-navis" id="hero-panel" aria-live="polite" aria-atomic="true">
@@ -106,7 +157,7 @@
 
       <nav class="hero-categories" aria-label="Danh mục">
         <div class="container px-navis px-lg-0">
-          <div class="row row-cols-2 row-cols-lg-4 g-0 hero-categories__row">
+          <div class="row row-cols-lg-4 g-0 hero-categories__row">
             <div class="col p-0">
               <a href="du-an.html" class="hero-categories__item hero-categories__item--active w-100 h-100"
                 data-hero-idx="0" data-hero-bg="./assets/banner/Rectangle-3.jpg" data-hero-title="Navis Global –"
@@ -135,7 +186,7 @@
               <a href="gioi-thieu.html" class="hero-categories__item w-100 h-100" data-hero-idx="3"
                 data-hero-bg="./assets/banner/Rectangle-3.jpg" data-hero-title="Du lịch cao cấp –"
                 data-hero-sub="Thương hiệu &amp; kết nối|khách luxury toàn cầu">
-                <img src="https://www.figma.com/api/mcp/asset/f7ed679f-bae0-40b6-ba52-01211e24a7bb" alt="" />
+                <img src="./assets/travel-icon.png" alt="" />
 
                 <span>Du lịch cao cấp</span>
               </a>
@@ -168,12 +219,12 @@
               <small>đối tác &amp;<br />khách hàng</small>
             </div>
             <div class="about-stats__divider" aria-hidden="true"></div>
-            <p class="about-stats__text">
+            <div class="about-stats__text">
               Giải pháp của chúng tôi tối ưu hiệu suất hiển thị và doanh thu trên các nền tảng OTA, kết hợp quảng bá qua
               mạng lưới TA/B2B quốc tế để mở rộng thị trường bền vững. Navis Global đóng vai trò điều hướng, giúp các mô
               hình lưu trú &amp; trải nghiệm cao cấp xây dựng thương hiệu và kết nối trực tiếp với khách quốc tế phù
               hợp.
-            </p>
+            </div>
           </div>
 
           <div class="feature-grid">
@@ -234,7 +285,7 @@
           <div class="service-slider__slide">
             <article class="service-card">
               <div class="service-card__icon"><img
-                  src="https://www.figma.com/api/mcp/asset/57ff9b2b-0ff8-4367-a7b8-1f2578081d8c" alt="" /></div>
+                  src="./assets/Network.png" alt="" /></div>
               <h3>Marketing du lịch quốc tế</h3>
               <p>Định vị thương hiệu và kích hoạt nhu cầu qua các kênh số và đối tác toàn cầu phù hợp với phân khúc
                 khách.</p>
@@ -247,7 +298,7 @@
           <div class="service-slider__slide">
             <article class="service-card">
               <div class="service-card__icon"><img
-                  src="https://www.figma.com/api/mcp/asset/57ff9b2b-0ff8-4367-a7b8-1f2578081d8c" alt="" /></div>
+                  src="./assets/Marketing.png" alt="" /></div>
               <h3>Marketing du lịch quốc tế</h3>
               <p>Định vị thương hiệu và kích hoạt nhu cầu qua các kênh số và đối tác toàn cầu phù hợp với phân khúc
                 khách.</p>
@@ -260,7 +311,7 @@
           <div class="service-slider__slide">
             <article class="service-card">
               <div class="service-card__icon"><img
-                  src="https://www.figma.com/api/mcp/asset/57ff9b2b-0ff8-4367-a7b8-1f2578081d8c" alt="" /></div>
+                  src="./assets/Tư vấn.png" alt="" /></div>
               <h3>Tư vấn &amp; vận hành</h3>
               <p>Đồng hành triển khai quy trình, chuẩn hóa vận hành và đo lường KPI doanh thu theo giai đoạn.</p>
               <a class="service-card__cta" href="dich-vu-quan-tri-ota.html"
@@ -289,7 +340,7 @@
     <section class="section-pillars" aria-label="Trụ cột dịch vụ">
       <div class="section-pillars__bg" aria-hidden="true"></div>
       <div class="container-fluid px-0">
-        <div class="row row-cols-2 row-cols-lg-5 g-0 section-pillars__columns">
+        <div class="row row-cols-lg-5 g-0 section-pillars__columns">
           <div class="col p-0">
             <div class="section-pillars__col h-100">
               <img src="./assets/Cruise.png" alt="" class="icon-pillars">
@@ -301,7 +352,7 @@
           </div>
           <div class="col p-0">
             <div class="section-pillars__col h-100">
-              <img src="./assets/Cruise.png" alt="" class="icon-pillars">
+              <img src="./assets/hotel.png" alt="" class="icon-pillars">
               <span>lĩnh vực phục vụ</span>
               <h3>Khách sạn cao cấp</h3>
               <p>Tối ưu hiển thị, giá bán và nội dung trên nền tảng quốc tế Gia tăng chuyển đổi, tối đa hóa doanh thu
@@ -310,27 +361,27 @@
           </div>
           <div class="col p-0">
             <div class="section-pillars__col h-100">
-              <img src="./assets/Cruise.png" alt="" class="icon-pillars">
+              <img src="./assets/nghi-duong.png" alt="" class="icon-pillars">
               <span>lĩnh vực phục vụ</span>
-              <h3>Khách sạn cao cấp</h3>
+              <h3>Resort nghỉ dưỡng</h3>
               <p>Tối ưu hiển thị, giá bán và nội dung trên nền tảng quốc tế Gia tăng chuyển đổi, tối đa hóa doanh thu
                 bền vững</p>
             </div>
           </div>
           <div class="col p-0">
             <div class="section-pillars__col h-100">
-              <img src="./assets/Cruise.png" alt="" class="icon-pillars">
+              <img src="./assets/Travel.png" alt="" class="icon-pillars">
               <span>lĩnh vực phục vụ</span>
-              <h3>Khách sạn cao cấp</h3>
+              <h3>Trải nghiệm du lịch điểm đến</h3>
               <p>Tối ưu hiển thị, giá bán và nội dung trên nền tảng quốc tế Gia tăng chuyển đổi, tối đa hóa doanh thu
                 bền vững</p>
             </div>
           </div>
           <div class="col p-0">
             <div class="section-pillars__col h-100">
-              <img src="./assets/Cruise.png" alt="" class="icon-pillars">
+              <img src="./assets/Sea.png" alt="" class="icon-pillars">
               <span>lĩnh vực phục vụ</span>
-              <h3>Khách sạn cao cấp</h3>
+              <h3>Dự án du lịch biển</h3>
               <p>Tối ưu hiển thị, giá bán và nội dung trên nền tảng quốc tế Gia tăng chuyển đổi, tối đa hóa doanh thu
                 bền vững</p>
             </div>
@@ -353,26 +404,24 @@
             <div class="why-grid__cell">
               <img src="./assets/check.svg" alt="">
               <h4>Nhân sự</h4>
-              <p>Đội ngũ sở hữu chứng chỉ Quản trị Nền tảng OTAs chuẩn Châu Âu, mang lại tăng trưởng doanh thu cho nhiều
-                loại hình lưu trú.</p>
+              <div class="why-grid__des">Đội ngũ sở hữu chứng chỉ Quản trị Nền tảng OTAs chuẩn Châu Âu, mang lại tăng trưởng doanh thu cho nhiều loại hình lưu trú.</div>
             </div>
             <div class="why-grid__cell">
               <img src="./assets/check.svg" alt="">
-              <h4>Nhân sự</h4>
-              <p>Đội ngũ sở hữu chứng chỉ Quản trị Nền tảng OTAs chuẩn Châu Âu, mang lại tăng trưởng doanh thu cho nhiều
-                loại hình lưu trú.</p>
+              <h4>Công nghệ</h4>
+              <div class="why-grid__des">
+                Triển khai PMS – Channel Manager – Booking Engine – CRM – Automation theo một thể thống nhất để đảm bảo hiệu suất tối đa.
+              </div>
             </div>
             <div class="why-grid__cell">
               <img src="./assets/check.svg" alt="">
-              <h4>Nhân sự</h4>
-              <p>Đội ngũ sở hữu chứng chỉ Quản trị Nền tảng OTAs chuẩn Châu Âu, mang lại tăng trưởng doanh thu cho nhiều
-                loại hình lưu trú.</p>
+              <h4>Mạng lưới quốc tế</h4>
+             <div class="why-grid__des">Mạng lưới TA/B2B quốc tế Giúp tài sản tiếp cận nguồn khách inbound chất lượng cao từ mạng lưới đối tác toàn cầu.</div>
             </div>
             <div class="why-grid__cell why-grid__cell--right">
               <img src="./assets/check.svg" alt="">
-              <h4>Công nghệ</h4>
-              <p>Triển khai PMS – Channel Manager – Booking Engine – CRM – Automation theo một thể thống nhất để đảm bảo
-                hiệu suất tối đa.</p>
+              <h4>Hệ sinh thái khép kín</h4>
+              <div class="why-grid__des">Cung cấp dịch vụ trọn vòng đời tài sản – từ tư vấn, xây dựng, vận hành đến chuyển nhượng – nhằm tối đa hóa giá trị thương mại.</div>
             </div>
           </div>
         </div>
@@ -384,7 +433,7 @@
       <div class="container px-navis">
         <h2>Đội ngũ của chúng tôi</h2>
         <div class="row ">
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-6">
             <article class="team-card">
               <div class="team-card__avatar">
                 <img src="/assets/people.jpg" alt="">
@@ -411,7 +460,88 @@
               </div>
             </article>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-6">
+            <article class="team-card">
+              <div class="team-card__avatar">
+                <img src="/assets/people-2.jpg" alt="">
+              </div>
+              <div class="d-flex justify-content-between align-items-center position-relative">
+                <div class="team-card__info">
+                  <h3>Thành viên</h3>
+                  <span>Điều hành</span>
+                </div>
+                <div class="button-action">
+                  <div class="group-logo">
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/in-logo-1.svg" alt=""></a>
+                    </div>
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/insta.svg" alt=""></a>
+                    </div>
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/fb-logo.svg" alt=""></a>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-plus icon-change"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-3 col-6">
+            <article class="team-card">
+              <div class="team-card__avatar">
+                <img src="/assets/people-3.jpg" alt="">
+              </div>
+              <div class="d-flex justify-content-between align-items-center position-relative">
+                <div class="team-card__info">
+                  <h3>Thành viên</h3>
+                  <span>Điều hành</span>
+                </div>
+                <div class="button-action">
+                  <div class="group-logo">
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/in-logo-1.svg" alt=""></a>
+                    </div>
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/insta.svg" alt=""></a>
+                    </div>
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/fb-logo.svg" alt=""></a>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-plus icon-change"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-3 col-6">
+            <article class="team-card">
+              <div class="team-card__avatar">
+                <img src="/assets/people-4.jpg" alt="">
+              </div>
+              <div class="d-flex justify-content-between align-items-center position-relative">
+                <div class="team-card__info">
+                  <h3>Thành viên</h3>
+                  <span>Điều hành</span>
+                </div>
+                <div class="button-action">
+                  <div class="group-logo">
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/in-logo-1.svg" alt=""></a>
+                    </div>
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/insta.svg" alt=""></a>
+                    </div>
+                    <div class="button-action_logo">
+                      <a href=""><img src="/assets/fb-logo.svg" alt=""></a>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-plus icon-change"></i>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-3 col-6">
             <article class="team-card">
               <div class="team-card__avatar">
                 <img src="/assets/people.jpg" alt="">
@@ -438,10 +568,10 @@
               </div>
             </article>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-6">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="/assets/people.jpg" alt="">
+                <img src="/assets/people-2.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center position-relative">
                 <div class="team-card__info">
@@ -465,10 +595,10 @@
               </div>
             </article>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-6">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="/assets/people.jpg" alt="">
+                <img src="/assets/people-3.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center position-relative">
                 <div class="team-card__info">
@@ -492,10 +622,10 @@
               </div>
             </article>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-6">
             <article class="team-card">
               <div class="team-card__avatar">
-                <img src="/assets/people.jpg" alt="">
+                <img src="/assets/people-4.jpg" alt="">
               </div>
               <div class="d-flex justify-content-between align-items-center position-relative">
                 <div class="team-card__info">
@@ -519,88 +649,6 @@
               </div>
             </article>
           </div>
-          <div class="col-lg-3">
-            <article class="team-card">
-              <div class="team-card__avatar">
-                <img src="/assets/people.jpg" alt="">
-              </div>
-              <div class="d-flex justify-content-between align-items-center position-relative">
-                <div class="team-card__info">
-                  <h3>Thành viên</h3>
-                  <span>Điều hành</span>
-                </div>
-                <div class="button-action">
-                  <div class="group-logo">
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/in-logo-1.svg" alt=""></a>
-                    </div>
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/insta.svg" alt=""></a>
-                    </div>
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/fb-logo.svg" alt=""></a>
-                    </div>
-                  </div>
-                  <i class="fa-solid fa-plus icon-change"></i>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-lg-3">
-            <article class="team-card">
-              <div class="team-card__avatar">
-                <img src="/assets/people.jpg" alt="">
-              </div>
-              <div class="d-flex justify-content-between align-items-center position-relative">
-                <div class="team-card__info">
-                  <h3>Thành viên</h3>
-                  <span>Điều hành</span>
-                </div>
-                <div class="button-action">
-                  <div class="group-logo">
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/in-logo-1.svg" alt=""></a>
-                    </div>
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/insta.svg" alt=""></a>
-                    </div>
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/fb-logo.svg" alt=""></a>
-                    </div>
-                  </div>
-                  <i class="fa-solid fa-plus icon-change"></i>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-lg-3">
-            <article class="team-card">
-              <div class="team-card__avatar">
-                <img src="/assets/people.jpg" alt="">
-              </div>
-              <div class="d-flex justify-content-between align-items-center position-relative">
-                <div class="team-card__info">
-                  <h3>Thành viên</h3>
-                  <span>Điều hành</span>
-                </div>
-                <div class="button-action">
-                  <div class="group-logo">
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/in-logo-1.svg" alt=""></a>
-                    </div>
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/insta.svg" alt=""></a>
-                    </div>
-                    <div class="button-action_logo">
-                      <a href=""><img src="/assets/fb-logo.svg" alt=""></a>
-                    </div>
-                  </div>
-                  <i class="fa-solid fa-plus icon-change"></i>
-                </div>
-              </div>
-            </article>
-          </div>
-
         </div>
       </div>
     </section>
@@ -612,80 +660,74 @@
         <div class="section-partners__divider"><span>Đối tác chiến lược</span></div>
         <div class="section-partners__row" id="logo-1">
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Frame 1984078206.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 9.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 11.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 16.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Frame 1984078223.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
-          </a>
-          <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 13.png" alt="" />
           </a>
         </div>
         <div class="section-partners__divider"><span>mạng lưới kết nối</span></div>
         <div class="section-partners__row" id="logo-2">
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 13-1.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 16-1.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 19-1.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+           <img src="./assets/doi-tac/Asset 1@4x 18.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+             <img src="./assets/doi-tac/Asset 1@4x 9-1.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
-          </a>
-          <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+             <img src="./assets/doi-tac/Asset 1@4x 11-1.png" alt="" />
           </a>
         </div>
         <div class="section-partners__row" id="logo-3">
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 20.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 17.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 19-2.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 9-2.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 11-2.png" alt="" />
           </a>
         </div>
         <div class="section-partners__row" id="logo-4">
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+            <img src="./assets/doi-tac/Asset 1@4x 19-3.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+           <img src="./assets/doi-tac/Asset 1@4x 20-1.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+           <img src="./assets/doi-tac/Asset 1@4x 9-3.png" alt="" />
           </a>
           <a href="">
-            <img src="./assets/slider-logo.png" alt="" />
+           <img src="./assets/doi-tac/Asset 1@4x 11-3.png" alt="" />
           </a>
         </div>
       </div>
@@ -695,11 +737,11 @@
     <section class="section-blog" id="tin-tuc" data-node-id="145:2189">
       <div class="container px-navis">
         <div class="section-blog__head row align-items-end justify-content-between gx-3 gy-4">
-          <div class="col-12 col-lg-auto section-blog__intro">
+          <div class="col-6 col-lg-auto section-blog__intro">
             <span class="tag-pill tag-pill--cream">Blog</span>
             <h2 class="section-blog__title">tin tức cập nhật</h2>
           </div>
-          <div class="col-12 col-lg-auto text-lg-end">
+          <div class="col-6 col-lg-auto text-end">
             <a class="blog-see-all" href="tin-tuc.html">
               <span>Xem tất cả</span>
               <i class="fa-regular fa-arrow-right"></i>

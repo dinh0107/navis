@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -23,8 +23,18 @@
 
       <header class="site-header">
         <div class="container px-navis">
-          <div class="row align-items-center py-2 gx-lg-4 gy-3 text-center text-lg-start">
-            <div class="col-12 col-lg-4 order-lg-1">
+          <div class="site-header__mobile-bar d-lg-none py-2">
+            <a href="tin-tuc.html" class="site-header__search site-header__search--mobile-bar" aria-label="Tìm kiếm">
+              <img src="./assets/search.svg" width="18" height="18" alt="" decoding="async" />
+            </a>
+            <a class="site-header__logo site-header__logo--mobile-bar" href="index.html" aria-label="Navis Global"></a>
+            <button type="button" class="site-header__menu-toggle" aria-expanded="false" aria-controls="site-nav-drawer"
+              aria-label="Mở menu điều hướng">
+              <span class="site-header__menu-toggle-bars" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="row site-header__desktop-row align-items-center py-2 gx-lg-4 gy-3 text-center text-lg-start d-none d-lg-flex">
+            <div class="col-12 col-lg-5 order-lg-1">
               <nav class="site-header__nav justify-content-center justify-content-lg-start"
                 aria-label="Menu chính trái">
                 <a class="site-header__link" href="gioi-thieu.html">giới thiệu</a>
@@ -42,7 +52,8 @@
                         tế</a>
                       <a class="site-header__dropdown-item" role="menuitem" href="lien-he.html">Tư vấn dự án du thuyền,
                         du lịch</a>
-                      <a class="site-header__dropdown-item" role="menuitem" href="lien-he.html">Tư vấn, Setup vận hành du
+                      <a class="site-header__dropdown-item" role="menuitem" href="lien-he.html">Tư vấn, Setup vận hành
+                        du
                         thuyền, khách sạn, resort</a>
                     </div>
                   </div>
@@ -51,13 +62,13 @@
                 <a class="site-header__link" href="du-an.html">Dự án</a>
               </nav>
             </div>
-            <div class="col-12 col-lg-4 order-first order-lg-2 text-lg-center">
+            <div class="col-12 col-lg-2 order-first order-lg-2 text-lg-center">
               <a class="site-header__logo d-inline-flex mx-lg-auto" href="index.html" aria-label="Navis Global">
                 <img src="https://www.figma.com/api/mcp/asset/2ec96501-f40e-4f72-89ad-e5700f30ba80"
                   alt="Navis Global" />
               </a>
             </div>
-            <div class="col-12 col-lg-4 order-lg-3">
+            <div class="col-12 col-lg-5 order-lg-3">
               <div class="site-header__tools justify-content-center justify-content-lg-end">
                 <nav class="site-header__nav" aria-label="Menu chính phải">
                   <a class="site-header__link" href="doi-tac.html">Đối tác</a>
@@ -72,7 +83,8 @@
                   aria-label="Chuyển sang tiếng Anh bằng Google Dịch">
                   <span class="site-header__locale-inner">
                     <span class="site-header__locale-flag-wrap" aria-hidden="true">
-                      <img class="site-header__locale-flag" src="./assets/vn.svg" width="20" height="20" alt="" decoding="async" />
+                      <img class="site-header__locale-flag" src="./assets/vn.svg" width="20" height="20" alt=""
+                        decoding="async" />
                     </span>
                     <span class="site-header__locale-code">VN</span>
                   </span>
@@ -81,6 +93,47 @@
             </div>
           </div>
         </div>
+        <div class="site-header__drawer-backdrop" aria-hidden="true"></div>
+        <aside id="site-nav-drawer" class="site-header__drawer" role="dialog" aria-modal="true" aria-label="Menu chính"
+          aria-hidden="true">
+          <div class="site-header__drawer-inner">
+            <div class="site-header__drawer-head">
+              <span class="site-header__drawer-title">Menu</span>
+              <button type="button" class="site-header__drawer-close" aria-label="Đóng menu">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <nav class="site-header__drawer-nav" aria-label="Điều hướng chính">
+              <a class="site-header__drawer-link" href="gioi-thieu.html">Giới thiệu</a>
+              <details class="site-header__drawer-details">
+                <summary class="site-header__drawer-summary">Dịch vụ</summary>
+                <div class="site-header__drawer-sub">
+                  <a href="dich-vu-quan-tri-ota.html">Quản trị hệ thống OTA</a>
+                  <a href="dich-vu-2.html">Mạng lưới đại lý du lịch quốc tế</a>
+                  <a href="lien-he.html">Marketing du lịch quốc tế</a>
+                  <a href="lien-he.html">Tư vấn dự án du thuyền, du lịch</a>
+                  <a href="lien-he.html">Tư vấn, Setup vận hành du thuyền, khách sạn, resort</a>
+                </div>
+              </details>
+              <a class="site-header__drawer-link" href="he-sinh-thai-navis.html">Hệ sinh thái Navis</a>
+              <a class="site-header__drawer-link" href="du-an.html">Dự án</a>
+              <a class="site-header__drawer-link" href="doi-tac.html">Đối tác</a>
+              <a class="site-header__drawer-link" href="tin-tuc.html">Tin tức</a>
+              <a class="site-header__drawer-link" href="lien-he.html">Liên hệ</a>
+            </nav>
+            <div class="site-header__drawer-footer">
+              <button type="button" class="site-header__locale site-header__locale--drawer" role="switch" aria-checked="false"
+                aria-label="Chuyển sang tiếng Anh bằng Google Dịch">
+                <span class="site-header__locale-inner">
+                  <span class="site-header__locale-flag-wrap" aria-hidden="true">
+                    <img class="site-header__locale-flag" src="./assets/vn.svg" width="20" height="20" alt="" decoding="async" />
+                  </span>
+                  <span class="site-header__locale-code">VN</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </aside>
       </header>
 
       <nav class="about-hero__breadcrumb container px-navis" aria-label="Breadcrumb">
@@ -188,7 +241,7 @@
             <article class="about-diff-card about-diff-card--featured h-100">
               <div class="about-diff-card__accent" aria-hidden="true"></div>
               <div class="about-diff-card__icon">
-                <img src="https://www.figma.com/api/mcp/asset/14a7d24f-bf9a-4478-99e9-05a8fcfde648" alt="" />
+                <img src="./assets/Global.png" alt="" />
               </div>
               <h3>OTA &amp; Marketing quốc tế</h3>
               <p>Tiếp cận đúng phân khúc khách hàng toàn cầu</p>
@@ -208,20 +261,20 @@
             <article class="about-diff-card h-100">
               <div class="about-diff-card__accent about-diff-card__accent--muted" aria-hidden="true"></div>
               <div class="about-diff-card__icon">
-                <img src="https://www.figma.com/api/mcp/asset/fc1cb29e-b89e-495a-8188-fdbb6c99584d" alt="" />
+                <img src="./assets/Cruise (1).png" alt="" />
               </div>
-              <h3>TA quốc tế &amp; kết nối B2B</h3>
-              <p>Mở rộng mạng lưới bán và hợp tác</p>
+              <h3>Tư vấn – Setup – Vận hành</h3>
+              <div class="about-diff-card__des">Mở rộng mạng lưới bán và hợp tác</div>
             </article>
           </div>
           <div class="about-diff-slider__slide">
             <article class="about-diff-card h-100">
               <div class="about-diff-card__accent about-diff-card__accent--muted" aria-hidden="true"></div>
               <div class="about-diff-card__icon">
-                <img src="https://www.figma.com/api/mcp/asset/b662ae36-608a-47ba-b528-85908daf9003" alt="" />
+                <img src="./assets/Chien-luoc.png" alt="" />
               </div>
-              <h3>Tư vấn – Setup – Vận hành</h3>
-              <p>Các dự án du thuyền &amp; dự án nghỉ dưỡng chuyên nghiệp</p>
+              <h3>Chiến lược  định vị thương hiệu</h3>
+              <div class="about-diff-card__des">Các dự án du thuyền & dự án nghỉ dưỡng chuyên nghiệp</div>
             </article>
           </div>
           <div class="about-diff-slider__slide">
@@ -231,7 +284,7 @@
                 <img src="https://www.figma.com/api/mcp/asset/d74764ec-3195-40c1-9a76-0d85141bfb25" alt="" />
               </div>
               <h3>Chiến lược định vị thương hiệu</h3>
-              <p>Định vị thương hiệu và mô hình kinh doanh tối ưu hóa</p>
+              <div class="about-diff-card__des">Định vị thương hiệu và mô hình kinh doanh tối ưu hóa</div>
             </article>
           </div>
         </div>
@@ -243,72 +296,72 @@
       </div>
     </section>
 
-    <section class="about-people" aria-labelledby="about-people-heading">
-      <div class="container px-navis">
-        <div class="row align-items-center g-4 g-lg-5">
-          <div class="col-12 col-lg-6">
-            <div class="ratio ratio-4x3 rounded-3 overflow-hidden shadow about-people__media">
-              <img class="object-fit-cover"
-                src="https://www.figma.com/api/mcp/asset/73a6092a-e8e5-4436-9694-f5341155ff63" alt="Đội ngũ Navis" />
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="about-people__copy ps-lg-4">
-              <div class="about-people__icon">
-                <img src="https://www.figma.com/api/mcp/asset/c7243ade-6fd1-4827-8413-05b476268f8f" alt="" />
+    <div class="about-split-stack">
+      <section class="about-split" aria-labelledby="about-people-heading">
+        <div class="container px-navis">
+          <div class="row about-split__row align-items-center g-4 g-lg-5">
+            <div class="col-12 col-lg-6 about-split__media-col">
+              <div class="rounded-4 overflow-hidden shadow about-split__media">
+                <img class="about-split__img" src="./assets/Our Team 1.jpg" alt="Đội ngũ Navis" />
               </div>
-              <h2 id="about-people-heading" class="about-people__title">Con người là giá trị cốt lõi</h2>
-              <p class="about-people__lead">Navis Global được xây dựng bởi một đội ngũ trẻ nhưng dày kinh nghiệm,
-                những người đã và đang trực tiếp làm việc với:</p>
-              <ul class="about-people__bullets list-unstyled">
-                <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Du
-                  thuyền
-                  nghỉ dưỡng cao cấp</li>
-                <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Dự án
-                  du lịch tại các điểm đến trọng điểm</li>
-                <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Đối
-                  tác, khách hàng và thị trường quốc tế</li>
-              </ul>
-              <p class="about-people__closing">Chúng tôi đề cao <strong>sự đồng hành, tinh thần chia sẻ giá trị, và
-                  trách nhiệm dài hạn</strong> với mỗi dự án mà mình tham gia.</p>
+            </div>
+            <div class="col-12 col-lg-6 about-split__copy-col">
+              <div class="about-split__copy">
+                <div class="about-split__icon">
+                  <img src="./assets/svg2115.png" alt="" />
+                </div>
+                <h2 id="about-people-heading" class="about-split__title">Con người là giá trị cốt lõi</h2>
+                <p class="about-split__lead">Navis Global được xây dựng bởi một đội ngũ trẻ nhưng dày kinh nghiệm,
+                  những người đã và đang trực tiếp làm việc với:</p>
+                <ul class="about-split__bullets list-unstyled">
+                  <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Du
+                    thuyền
+                    nghỉ dưỡng cao cấp</li>
+                  <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Dự án
+                    du lịch tại các điểm đến trọng điểm</li>
+                  <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Đối
+                    tác, khách hàng và thị trường quốc tế</li>
+                </ul>
+                <p class="about-split__closing">Chúng tôi đề cao <strong>sự đồng hành, tinh thần chia sẻ giá trị, và
+                    trách nhiệm dài hạn</strong> với mỗi dự án mà mình tham gia.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="about-vision" aria-labelledby="about-vision-heading">
-      <div class="container px-navis">
-        <div class="row align-items-center g-4 g-lg-5">
-          <div class="col-12 col-lg-6 order-lg-1">
-            <div class="about-vision__copy pe-lg-4">
-              <div class="about-vision__icon">
-                <img src="https://www.figma.com/api/mcp/asset/fbcac05d-1413-4adf-aec3-7dfd82f2c7c3" alt="" />
+      <section class="about-split" aria-labelledby="about-vision-heading">
+        <div class="container px-navis">
+          <div class="row about-split__row align-items-center g-4 g-lg-5">
+            <div class="col-12 col-lg-6 about-split__media-col">
+              <div class="rounded-4 overflow-hidden shadow about-split__media">
+                <img class="about-split__img" src="./assets/Our Team 1 (1).jpg" alt="" />
               </div>
-              <h2 id="about-vision-heading" class="about-vision__title">Tầm nhìn của Navis Global</h2>
-              <p>Chúng tôi không chỉ muốn trở thành một công ty dịch vụ. Navis Global hướng tới việc trở thành:</p>
-              <p class="about-vision__emphasis">Đơn vị tư vấn &amp; vận hành du lịch – du thuyền hàng đầu, là cầu nối
-                giữa Việt Nam và thị trường quốc tế.</p>
-              <p>Nơi các doanh nghiệp tìm thấy:</p>
-              <ul class="about-vision__bullets list-unstyled">
-                <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Chiến
-                  lược rõ ràng</li>
-                <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Giải
-                  pháp thực tế</li>
-                <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Và một
-                  đối tác đủ năng lực để đi đường dài</li>
-              </ul>
             </div>
-          </div>
-          <div class="col-12 col-lg-6 order-lg-2">
-            <div class="ratio ratio-4x3 rounded-3 overflow-hidden shadow about-vision__media">
-              <img class="object-fit-cover"
-                src="https://www.figma.com/api/mcp/asset/3452cd04-68d2-4788-aab1-dd11f4bb8e5c" alt="" />
+            <div class="col-12 col-lg-6 about-split__copy-col">
+              <div class="about-split__copy">
+                <div class="about-split__icon">
+                  <img src="https://www.figma.com/api/mcp/asset/fbcac05d-1413-4adf-aec3-7dfd82f2c7c3" alt="" />
+                </div>
+                <h2 id="about-vision-heading" class="about-split__title">Tầm nhìn của Navis Global</h2>
+                <p>Chúng tôi không chỉ muốn trở thành một công ty dịch vụ. Navis Global hướng tới việc trở thành:</p>
+                <p class="about-split__emphasis">Đơn vị tư vấn &amp; vận hành du lịch – du thuyền hàng đầu, là cầu nối
+                  giữa Việt Nam và thị trường quốc tế.</p>
+                <p>Nơi các doanh nghiệp tìm thấy:</p>
+                <ul class="about-split__bullets list-unstyled">
+                  <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Chiến
+                    lược rõ ràng</li>
+                  <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Giải
+                    pháp thực tế</li>
+                  <li><img src="https://www.figma.com/api/mcp/asset/9bfaaf3c-5be8-44e3-9542-1827ebfc71d5" alt="" />Và một
+                    đối tác đủ năng lực để đi đường dài</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <section class="about-cta" aria-labelledby="about-cta-heading">
       <div class="container px-navis">
